@@ -1,0 +1,19 @@
+{
+  "name": "ws-csrf-injection-demo",
+  "version": "0.0.1",
+  "description": "Websocket CSRF Injection demo",
+  "type": "module",
+  "main": "chat.js",
+  "scripts": {
+    "test": "npx tap"
+  },
+  "author": "Daniel Mantovani",
+  "license": "MIT",
+  "dependencies": {
+    "@mojojs/core": "^1.7.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.27.1",
+    "tap": "^16.3.0"
+  }
+}
