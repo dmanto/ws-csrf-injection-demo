@@ -14,12 +14,8 @@ app.get('/', async ctx => {
 });
 
 app.websocket('/channel', async ctx => {
-  const origin = ctx.req.get('Origin');
-  const host = ctx.req.get('Host');
   const session = await ctx.session();
-  const user = session.user || 'not assigned';
-  ctx.log.warn(`Detected Origin:  ${origin}, vs ${host}`);
-  ctx.log.warn(`Authenticated user: ${user}`);
+  const user = session.user || 'not assigned'; // This wil be "Bender", unfortunatelly
   ctx.plain(async ws => {
     const listener = msg => ws.send(msg);
     ctx.models.events.on('mojochat', listener);
